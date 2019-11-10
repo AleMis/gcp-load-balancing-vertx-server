@@ -1,0 +1,16 @@
+PROJECT_NAME="test-kube-gke"
+EXTERNAL_LB_FIREWALL="vertx-server-external-lb-firewall-rule-mig"
+INTERNAL_LB_FIREWALL="vertx-server-internal-lb-firewall-rule-mig"
+NETWORK_TAG="vertx-server-lb-mig"
+HEALTH_CHECK="vertx-server-healthcheck-mig"
+MIG_NAME="vertx-server-mig"
+ZONE="europe-west1b"
+REGION="europe-west1"
+INSTANCE_TEMPLATE="vertx-server-vm-template-mig"
+BASE_INSTANCE_NAME="vertx-server-vm"
+CONTAINER_IMAGE=gcr.io/$PROJECT_NAME/vertx-server:1.0
+BACKEND_SERVICE="vertx-server-backend-service"
+FRONTEND="vertx-server-frontend-service"
+URL_MAP=vert-server-lb-map
+HTTP_PROXY=vertx-server-http-lb-proxy
+FORWARDING_RULE=vertx-server-front-rule
