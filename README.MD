@@ -4,7 +4,7 @@
 This project shows how to take advantage of benefits using Google Cloud Managed Instance Group for balancing traffic from Web to HTTP Server using HTTP Load Balancer.
 
 ### `Architecture`
-HTTP Server was set up using Vert.X. SpringBoot was used as to create stand-alone application. HTTP Server is not sophisticated, because it was not a purpose of this project. 
+HTTP Server was set up using Vert.X. SpringBoot was used to create stand-alone application. HTTP Server is not sophisticated, because it was not a purpose of this project. 
 
 ### `Prerequisites`
 * Java 8
@@ -49,7 +49,7 @@ After everything will be set up, please wait few minutes during which GCP will b
 #### `Step 4. Fun :)`
 
 1. Run _gcloud compute instances list_ you can see that two instances was created in one MIG
-2. To check whether autoscaling (per RPS) works in our MIG we can generate multiple HTTP requests using simple command: _ while true; do curl -m1 http://LB_IP_ADDRESS:8080/; done_.
+2. To check whether autoscaling (per RPS) works in our MIG we can generate multiple HTTP requests using simple command: while true; do curl -m1 http://LB_IP_ADDRESS:8080/; done
 While script is running you can open second terminal and again write  _gcloud compute instances list_. 
 * You should see that number of instances in MIG increases because of too many HTTP requests sends to instances -> This means that autoscaling works :). 
 * Also in your terminal you should see that response on sending HTTP requests comes from different VMs -> This means that load balancing works :). 
