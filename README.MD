@@ -44,5 +44,12 @@ What is created during running all gcp scripts:
 * Managed Instance Group with 2 VM Instances with vertx-http-server container. MIG could be scaled up max. to 10 based on RCP (Request per seconds) to our application.
 * HTTP Load Balancer which helps to balance traffic from one external IP address into or VM instances in create MIG. To prove that traffic goes to different VM instances, name of the host machine is return in the message which will be send by the server after invoking HTTP Load Balancer IPAddress with port 8080 -> i.e.31.20.191.0:8080.
 
+After everything will be set up, please wait few minutes during which GCP will be configure created load balancer connection. 
+
+#### `Step 4. Fun :)`
+
+1. Run _gcloud compute instances list_ you can see that two instances was created in one MIG
+2. To check whether autoscaling (per RPS) works in our MIG we can generate multiple HTTP requests using simple command: "_ while true; do curl -m1 http://LB_IP_ADDRESS:8080/; done_".
+While script will be running you can open second terminal and again write  _gcloud compute instances list_. You should see that number of instances increases because of to many HTTP requests.
 
 

@@ -22,5 +22,6 @@ gcloud beta compute --project $PROJECT_NAME instance-groups managed set-autoscal
   --min-num-replicas 2 \
   --target-load-balancing-utilization 0.70
 
-gcloud compute --project $PROJECT_NAME instance-groups managed set-named-ports $MIG_NAME \
-  --named-ports http:8080
+gcloud beta compute --project $PROJECT_NAME instance-groups managed set-named-ports $MIG_NAME \
+  --named-ports http:8080 \
+  --region $REGION

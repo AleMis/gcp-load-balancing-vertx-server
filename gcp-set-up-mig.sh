@@ -1,20 +1,26 @@
 #!/bin/bash
 
+set -e
+
+source gcp/settings.sh
+
 # Step 0. Configuration
 gcloud config set compute/zone $ZONE
 gcloud config set compute/region $REGION
 
+cd gcp
+
 # Step 1. Create instance template
-bash gcp/gcp-instance-tempalate.sh
+bash gcp-instance-template.sh
 
 # Step 2. Create firewall rules
-bash gcp/gcp-firewall-rules.sh
+bash gcp-firewall-rules.sh
 
 # Step 3. Create healthcheck
-bash gcp/gcp-healthcheck.sh
+bash gcp-healthcheck.sh
 
 # Step 4. Create Managed Instance Group
-bash gcp/gcp-mig.sh
+bash gcp-mig.sh
 
 # Step 5. Create HTTP Load Balancer with backend service and forwarding rule
-bash gcp/gcp-loadbalancer.sh
+bash gcp-loadbalancer.sh
