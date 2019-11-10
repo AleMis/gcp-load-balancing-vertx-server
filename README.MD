@@ -1,4 +1,4 @@
-# `Setting HTTP Load Balancer for Managed Instance Group with Vertx HTTP Server in Google Cloud`
+# `Setting HTTP Load Balancer for Managed Instance Group with Vert.X HTTP Server in Google Cloud`
 
 ### `Description`
 This project shows how to take advantage of benefits using Google Cloud Managed Instance Group for balancing traffic from Web to HTTP Server using HTTP Load Balancer.
