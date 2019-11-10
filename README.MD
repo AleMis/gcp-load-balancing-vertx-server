@@ -49,7 +49,11 @@ After everything will be set up, please wait few minutes during which GCP will b
 #### `Step 4. Fun :)`
 
 1. Run _gcloud compute instances list_ you can see that two instances was created in one MIG
-2. To check whether autoscaling (per RPS) works in our MIG we can generate multiple HTTP requests using simple command: "_ while true; do curl -m1 http://LB_IP_ADDRESS:8080/; done_".
-While script will be running you can open second terminal and again write  _gcloud compute instances list_. You should see that number of instances increases because of to many HTTP requests.
+2. To check whether autoscaling (per RPS) works in our MIG we can generate multiple HTTP requests using simple command: _ while true; do curl -m1 http://LB_IP_ADDRESS:8080/; done_.
+While script is running you can open second terminal and again write  _gcloud compute instances list_. 
+* You should see that number of instances in MIG increases because of too many HTTP requests sends to instances -> This means that autoscaling works :). 
+* Also in your terminal you should see that response on sending HTTP requests comes from different VMs -> This means that load balancing works :). 
+
+When you stop the script which are sending HTTP requests, after while you should see that number of VMs instances decreased to started quantity of 2. 
 
 
